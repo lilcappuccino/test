@@ -56,15 +56,39 @@
 		6FC30C0B23B115690021E3BD /* TestINNOVATIONS */ = {
 			isa = PBXGroup;
 			children = (
-				6FC30C0C23B115690021E3BD /* AppDelegate.swift */,
-				6FC30C0E23B115690021E3BD /* SceneDelegate.swift */,
-				6FC30C1023B115690021E3BD /* ViewController.swift */,
+				6FC30C2223B1159B0021E3BD /* Search */,
+				6FC30C2123B1158D0021E3BD /* Favourite */,
+				6FC30C2023B115810021E3BD /* Support */,
 				6FC30C1223B115690021E3BD /* Main.storyboard */,
+			);
+			path = TestINNOVATIONS;
+			sourceTree = "<group>";
+		};
+		6FC30C2023B115810021E3BD /* Support */ = {
+			isa = PBXGroup;
+			children = (
 				6FC30C1523B1156B0021E3BD /* Assets.xcassets */,
 				6FC30C1723B1156B0021E3BD /* LaunchScreen.storyboard */,
 				6FC30C1A23B1156B0021E3BD /* Info.plist */,
+				6FC30C0C23B115690021E3BD /* AppDelegate.swift */,
+				6FC30C0E23B115690021E3BD /* SceneDelegate.swift */,
 			);
-			path = TestINNOVATIONS;
+			path = Support;
+			sourceTree = "<group>";
+		};
+		6FC30C2123B1158D0021E3BD /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
+		6FC30C2223B1159B0021E3BD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6FC30C1023B115690021E3BD /* ViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y7693M9CNF;
-				INFOPLIST_FILE = TestINNOVATIONS/Info.plist;
+				INFOPLIST_FILE = TestINNOVATIONS/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y7693M9CNF;
-				INFOPLIST_FILE = TestINNOVATIONS/Info.plist;
+				INFOPLIST_FILE = TestINNOVATIONS/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
