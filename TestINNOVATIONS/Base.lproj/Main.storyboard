@@ -41,55 +41,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CFD-wl-E1j" id="UJ6-Ob-rgN" customClass="DeclarationTableViewCell" customModule="TestINNOVATIONS" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gX1-zt-Dgz">
-                                                    <rect key="frame" x="373" y="11" width="21" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="21" id="u2k-QA-ieu"/>
-                                                    </constraints>
-                                                    <state key="normal" image="book.fill" catalog="system"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db3-Ps-jbI">
-                                                    <rect key="frame" x="343" y="11" width="22" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="22" id="ooT-wl-zFI"/>
-                                                    </constraints>
-                                                    <state key="normal" image="star" catalog="system"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marchenko Vadym Igorovich" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7J5-h4-doN">
-                                                    <rect key="frame" x="20" y="19" width="315" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nimses company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7h-8A-jPT">
-                                                    <rect key="frame" x="20" y="47.5" width="315" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-Q0-5PD">
-                                                    <rect key="frame" x="20" y="76.5" width="315" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gX1-zt-Dgz" secondAttribute="trailing" id="7dB-qv-Bvw"/>
-                                                <constraint firstItem="7J5-h4-doN" firstAttribute="leading" secondItem="UJ6-Ob-rgN" secondAttribute="leadingMargin" id="B5Z-Iw-DBW"/>
-                                                <constraint firstItem="Db3-Ps-jbI" firstAttribute="leading" secondItem="e7h-8A-jPT" secondAttribute="trailing" constant="8" symbolic="YES" id="FwO-0B-DTu"/>
-                                                <constraint firstItem="Db3-Ps-jbI" firstAttribute="centerY" secondItem="UJ6-Ob-rgN" secondAttribute="centerY" id="GMX-Z4-Uy0"/>
-                                                <constraint firstItem="Db3-Ps-jbI" firstAttribute="leading" secondItem="7J5-h4-doN" secondAttribute="trailing" constant="8" symbolic="YES" id="M6D-ig-XmC"/>
-                                                <constraint firstItem="vAz-Q0-5PD" firstAttribute="top" secondItem="e7h-8A-jPT" secondAttribute="bottom" constant="8" symbolic="YES" id="NfG-LE-YCG"/>
-                                                <constraint firstItem="gX1-zt-Dgz" firstAttribute="leading" secondItem="Db3-Ps-jbI" secondAttribute="trailing" constant="8" symbolic="YES" id="SB4-U9-FhR"/>
-                                                <constraint firstItem="vAz-Q0-5PD" firstAttribute="leading" secondItem="UJ6-Ob-rgN" secondAttribute="leadingMargin" id="aiK-0Z-PmH"/>
-                                                <constraint firstItem="7J5-h4-doN" firstAttribute="top" secondItem="UJ6-Ob-rgN" secondAttribute="topMargin" constant="8" id="c8V-bd-Ury"/>
-                                                <constraint firstItem="gX1-zt-Dgz" firstAttribute="centerY" secondItem="UJ6-Ob-rgN" secondAttribute="centerY" id="ge8-hg-xmW"/>
-                                                <constraint firstItem="e7h-8A-jPT" firstAttribute="leading" secondItem="UJ6-Ob-rgN" secondAttribute="leadingMargin" id="iZF-PB-fHI"/>
-                                                <constraint firstItem="e7h-8A-jPT" firstAttribute="top" secondItem="7J5-h4-doN" secondAttribute="bottom" constant="8" symbolic="YES" id="jg5-Xo-VNV"/>
-                                                <constraint firstItem="Db3-Ps-jbI" firstAttribute="leading" secondItem="vAz-Q0-5PD" secondAttribute="trailing" constant="8" symbolic="YES" id="mS7-4c-JtQ"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -119,6 +70,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="k0k-G7-1RB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6IV-OR-fMB">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -170,8 +122,4 @@
             <point key="canvasLocation" x="1656.521739130435" y="-216.29464285714286"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="book.fill" catalog="system" width="64" height="50"/>
-        <image name="star" catalog="system" width="64" height="58"/>
-    </resources>
 </document>

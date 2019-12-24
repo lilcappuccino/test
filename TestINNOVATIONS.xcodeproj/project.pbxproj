@@ -15,6 +15,10 @@
 		6FC30C1923B1156B0021E3BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FC30C1723B1156B0021E3BD /* LaunchScreen.storyboard */; };
 		6FC30C2723B120000021E3BD /* DeclarationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC30C2523B120000021E3BD /* DeclarationTableViewCell.swift */; };
 		6FC30C2823B120000021E3BD /* DeclarationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FC30C2623B120000021E3BD /* DeclarationTableViewCell.xib */; };
+		6FC55BF723B2534F00CE3281 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC55BF623B2534F00CE3281 /* NetworkService.swift */; };
+		6FC55BF923B2549F00CE3281 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC55BF823B2549F00CE3281 /* NetworkDataFetcher.swift */; };
+		6FC55BFB23B254DE00CE3281 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC55BFA23B254DE00CE3281 /* ResponseModel.swift */; };
+		6FC55BFF23B2615A00CE3281 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC55BFE23B2615A00CE3281 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		6FC30C1A23B1156B0021E3BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FC30C2523B120000021E3BD /* DeclarationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationTableViewCell.swift; sourceTree = "<group>"; };
 		6FC30C2623B120000021E3BD /* DeclarationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeclarationTableViewCell.xib; sourceTree = "<group>"; };
+		6FC55BF623B2534F00CE3281 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		6FC55BF823B2549F00CE3281 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		6FC55BFA23B254DE00CE3281 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		6FC55BFE23B2615A00CE3281 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,8 @@
 		6FC30C0B23B115690021E3BD /* TestINNOVATIONS */ = {
 			isa = PBXGroup;
 			children = (
+				6FC55BFC23B2613C00CE3281 /* Extensions */,
+				6FC55BF523B2533800CE3281 /* Service */,
 				6FC30C2223B1159B0021E3BD /* Search */,
 				6FC30C2123B1158D0021E3BD /* Favourite */,
 				6FC30C2023B115810021E3BD /* Support */,
@@ -103,6 +113,24 @@
 				6FC30C2623B120000021E3BD /* DeclarationTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		6FC55BF523B2533800CE3281 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6FC55BF623B2534F00CE3281 /* NetworkService.swift */,
+				6FC55BF823B2549F00CE3281 /* NetworkDataFetcher.swift */,
+				6FC55BFA23B254DE00CE3281 /* ResponseModel.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6FC55BFC23B2613C00CE3281 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6FC55BFE23B2615A00CE3281 /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +205,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FC55BF723B2534F00CE3281 /* NetworkService.swift in Sources */,
+				6FC55BF923B2549F00CE3281 /* NetworkDataFetcher.swift in Sources */,
 				6FC30C1123B115690021E3BD /* ViewController.swift in Sources */,
 				6FC30C0D23B115690021E3BD /* AppDelegate.swift in Sources */,
+				6FC55BFB23B254DE00CE3281 /* ResponseModel.swift in Sources */,
 				6FC30C2723B120000021E3BD /* DeclarationTableViewCell.swift in Sources */,
+				6FC55BFF23B2615A00CE3281 /* String.swift in Sources */,
 				6FC30C0F23B115690021E3BD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
