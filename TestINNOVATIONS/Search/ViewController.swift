@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupSearchbar()
+        registerCell()
     }
     
     // MARK:-> Setup UI
@@ -35,6 +36,10 @@ class ViewController: UIViewController {
                 navigationItem.searchController = searchController
                 searchController.searchBar.delegate = self
        }
+    
+    private func registerCell(){
+        tableView.register(UINib(nibName: "DeclarationTableViewCell", bundle: nil), forCellReuseIdentifier: DeclarationTableViewCell.description())
+    }
     
 }
 

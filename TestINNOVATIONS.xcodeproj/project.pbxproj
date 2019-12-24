@@ -13,6 +13,8 @@
 		6FC30C1423B115690021E3BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FC30C1223B115690021E3BD /* Main.storyboard */; };
 		6FC30C1623B1156B0021E3BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FC30C1523B1156B0021E3BD /* Assets.xcassets */; };
 		6FC30C1923B1156B0021E3BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FC30C1723B1156B0021E3BD /* LaunchScreen.storyboard */; };
+		6FC30C2723B120000021E3BD /* DeclarationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC30C2523B120000021E3BD /* DeclarationTableViewCell.swift */; };
+		6FC30C2823B120000021E3BD /* DeclarationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FC30C2623B120000021E3BD /* DeclarationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		6FC30C1523B1156B0021E3BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FC30C1823B1156B0021E3BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FC30C1A23B1156B0021E3BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FC30C2523B120000021E3BD /* DeclarationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationTableViewCell.swift; sourceTree = "<group>"; };
+		6FC30C2623B120000021E3BD /* DeclarationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeclarationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +90,19 @@
 		6FC30C2223B1159B0021E3BD /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				6FC30C2923B120050021E3BD /* Cell */,
 				6FC30C1023B115690021E3BD /* ViewController.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		6FC30C2923B120050021E3BD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6FC30C2523B120000021E3BD /* DeclarationTableViewCell.swift */,
+				6FC30C2623B120000021E3BD /* DeclarationTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +165,7 @@
 			files = (
 				6FC30C1923B1156B0021E3BD /* LaunchScreen.storyboard in Resources */,
 				6FC30C1623B1156B0021E3BD /* Assets.xcassets in Resources */,
+				6FC30C2823B120000021E3BD /* DeclarationTableViewCell.xib in Resources */,
 				6FC30C1423B115690021E3BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +179,7 @@
 			files = (
 				6FC30C1123B115690021E3BD /* ViewController.swift in Sources */,
 				6FC30C0D23B115690021E3BD /* AppDelegate.swift in Sources */,
+				6FC30C2723B120000021E3BD /* DeclarationTableViewCell.swift in Sources */,
 				6FC30C0F23B115690021E3BD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
