@@ -16,63 +16,69 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgi-Cy-ed0">
-                        <rect key="frame" x="277" y="32.5" width="23" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="bOc-P7-AL9"/>
-                            <constraint firstAttribute="width" secondItem="sgi-Cy-ed0" secondAttribute="height" multiplier="21:22" id="yrj-4w-APb"/>
-                        </constraints>
-                        <state key="normal" image="book.fill" catalog="system"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaF-mR-bWH">
-                        <rect key="frame" x="245" y="32.5" width="24" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="bQo-pM-a44"/>
-                            <constraint firstAttribute="width" secondItem="yaF-mR-bWH" secondAttribute="height" multiplier="1:1" id="dhT-su-OKb"/>
-                        </constraints>
-                        <state key="normal" image="star" catalog="system"/>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Name Surname" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-vz-OdX">
-                        <rect key="frame" x="8" y="8" width="229" height="19.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeF-HT-QGY">
-                        <rect key="frame" x="8" y="35.5" width="229" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-0y-7Bx">
-                        <rect key="frame" x="8" y="61.5" width="229" height="19.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Zf-5m-GQC">
+                        <rect key="frame" x="256" y="0.0" width="56" height="89"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTE-Yi-dc3">
+                                <rect key="frame" x="0.0" y="32.5" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="C4k-DJ-VDr"/>
+                                    <constraint firstAttribute="height" constant="24" id="sgM-tL-sNg"/>
+                                </constraints>
+                                <state key="normal" image="book.fill" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOa-0R-QDl">
+                                <rect key="frame" x="32" y="32.5" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="bd6-ip-J7E"/>
+                                    <constraint firstAttribute="width" constant="24" id="esc-Jz-CwN"/>
+                                </constraints>
+                                <state key="normal" image="star" catalog="system"/>
+                            </button>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="woj-y6-U8o">
+                        <rect key="frame" x="8" y="8" width="240" height="73"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Name Surname" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-vz-OdX">
+                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="company name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeF-HT-QGY">
+                                <rect key="frame" x="0.0" y="25" width="104.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="position" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-0y-7Bx">
+                                <rect key="frame" x="0.0" y="50" width="54.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="yaF-mR-bWH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BTB-TX-ihL"/>
-                    <constraint firstItem="yaF-mR-bWH" firstAttribute="leading" secondItem="uYK-0y-7Bx" secondAttribute="trailing" constant="8" id="EnW-1l-dto"/>
-                    <constraint firstAttribute="trailing" secondItem="sgi-Cy-ed0" secondAttribute="trailing" constant="20" symbolic="YES" id="Oti-4C-geX"/>
-                    <constraint firstItem="EeF-HT-QGY" firstAttribute="top" secondItem="rcW-vz-OdX" secondAttribute="bottom" constant="8" id="PAK-5l-QIP"/>
-                    <constraint firstItem="uYK-0y-7Bx" firstAttribute="top" secondItem="EeF-HT-QGY" secondAttribute="bottom" constant="8" id="RDP-mi-V5K"/>
-                    <constraint firstItem="rcW-vz-OdX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="efA-8E-Gjf"/>
-                    <constraint firstAttribute="bottom" secondItem="uYK-0y-7Bx" secondAttribute="bottom" constant="8" id="l9M-uu-ZYr"/>
-                    <constraint firstItem="uYK-0y-7Bx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="rwx-vN-4JD"/>
-                    <constraint firstItem="sgi-Cy-ed0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ujr-B3-s0p"/>
-                    <constraint firstItem="yaF-mR-bWH" firstAttribute="leading" secondItem="EeF-HT-QGY" secondAttribute="trailing" constant="8" id="vat-HF-0uv"/>
-                    <constraint firstItem="sgi-Cy-ed0" firstAttribute="leading" secondItem="yaF-mR-bWH" secondAttribute="trailing" constant="8" symbolic="YES" id="wch-bk-UuC"/>
-                    <constraint firstItem="yaF-mR-bWH" firstAttribute="leading" secondItem="rcW-vz-OdX" secondAttribute="trailing" constant="8" id="ws6-g7-djS"/>
-                    <constraint firstItem="rcW-vz-OdX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="xrp-Q9-H2E"/>
-                    <constraint firstItem="EeF-HT-QGY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="y1Z-5h-YlJ"/>
+                    <constraint firstAttribute="bottom" secondItem="0Zf-5m-GQC" secondAttribute="bottom" id="5Sc-Wc-llf"/>
+                    <constraint firstAttribute="trailing" secondItem="0Zf-5m-GQC" secondAttribute="trailing" constant="8" id="FKW-dU-03n"/>
+                    <constraint firstItem="woj-y6-U8o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="TRy-FB-hdE"/>
+                    <constraint firstItem="0Zf-5m-GQC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="YDy-Dm-nWa"/>
+                    <constraint firstItem="0Zf-5m-GQC" firstAttribute="leading" secondItem="woj-y6-U8o" secondAttribute="trailing" constant="8" id="hDU-Yu-Lw1"/>
+                    <constraint firstAttribute="bottom" secondItem="woj-y6-U8o" secondAttribute="bottom" constant="8" id="igH-BH-mKi"/>
+                    <constraint firstItem="woj-y6-U8o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="sCz-lQ-flN"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="companyName" destination="EeF-HT-QGY" id="26w-xJ-10W"/>
-                <outlet property="name" destination="rcW-vz-OdX" id="gpj-bB-Xzi"/>
-                <outlet property="position" destination="uYK-0y-7Bx" id="z6L-Co-5Xa"/>
+                <outlet property="addToFavButton" destination="sOa-0R-QDl" id="GMc-17-dPW"/>
+                <outlet property="companyNameLabel" destination="EeF-HT-QGY" id="26w-xJ-10W"/>
+                <outlet property="nameLabel" destination="rcW-vz-OdX" id="gpj-bB-Xzi"/>
+                <outlet property="openPdfButton" destination="dTE-Yi-dc3" id="fEc-Cr-lH8"/>
+                <outlet property="positionLabel" destination="uYK-0y-7Bx" id="z6L-Co-5Xa"/>
+                <outlet property="stackView" destination="0Zf-5m-GQC" id="GG8-Tg-qiX"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="157.70089285714286"/>
         </tableViewCell>

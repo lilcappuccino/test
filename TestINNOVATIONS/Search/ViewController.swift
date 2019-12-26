@@ -12,7 +12,11 @@ class ViewController: UIViewController {
     
     private var timer : Timer?
     private var fetchData = NetworkDataFetcher()
-    private var data = [ItemResponseModel]()
+    private var data = [ItemResponseModel]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     // MARK:-> IBOutlet
     @IBOutlet weak var tableView: UITableView!
@@ -62,8 +66,10 @@ extension ViewController: UISearchBarDelegate {
             print(searchText)
             self.fetchData.fetchDeclarations(searchTerm: searchText) { [weak self] (responseData) in
                 guard let response = responseData, let self = self  else { return }
-                self.data = response.items
-                self.tableView.reloadData()
+                self.data.removeAll()
+                self.data.append(contentsOf: response.items)
+//                self.tableView.beginUpdates()
+//                self.tableView.endUpdates()
             }
         })
         
@@ -78,15 +84,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DeclarationTableViewCell.description(), for: indexPath) as! DeclarationTableViewCell
-        let currentItem = data[indexPath.item]
-        cell.name.text = "\(currentItem.firstname) \(currentItem.lastname)"
-        cell.companyName.text = currentItem.placeOfWork
-        cell.position.text = currentItem.position
-    
+        let currentItem = data[indexPath.row]
+        let name = "\(currentItem.firstname) \(currentItem.lastname)"
+        cell.setupCell(name: name, companyName: currentItem.placeOfWork, position: currentItem.position ?? cell.hasNotPositionText, link: currentItem.linkPDF)
         return cell
     }
-    
-    
-    
     
 }
