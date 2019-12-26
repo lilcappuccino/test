@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     
     // MARK:-> IBOutlet
     @IBOutlet weak var tableView: UITableView!
+    var loadingIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        return indicator
+    }()
     
     
     // MARK:-> Lifecycle
@@ -51,6 +55,8 @@ class ViewController: UIViewController {
     private func setupTableView(){
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundView  = loadingIndicator
+        tableView.separatorStyle = .none
     }
     
     
@@ -64,12 +70,13 @@ extension ViewController: UISearchBarDelegate {
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false, block: {_ in
             print(searchText)
+            self.loadingIndicator.startAnimating()
+            self.data.removeAll()
             self.fetchData.fetchDeclarations(searchTerm: searchText) { [weak self] (responseData) in
                 guard let response = responseData, let self = self  else { return }
-                self.data.removeAll()
+                
                 self.data.append(contentsOf: response.items)
-//                self.tableView.beginUpdates()
-//                self.tableView.endUpdates()
+                self.loadingIndicator.stopAnimating()
             }
         })
         
