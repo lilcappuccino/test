@@ -12,8 +12,8 @@ class NetworkService {
     
     
     func request(searchTerm: String, completion: @escaping (Data?, Error?) -> Void){
-        let params = preapreParams(searchTerm: searchTerm)
-        guard let url = self.url(params: params) else { return }
+//        let params = preapreParams(searchTerm: searchTerm)
+        guard let url = URL(string: "https://public-api.nazk.gov.ua/v1/declaration/?q=\(searchTerm.encodeUrl)") else { return }
         print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "get"
