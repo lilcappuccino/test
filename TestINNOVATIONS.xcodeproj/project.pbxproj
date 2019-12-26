@@ -53,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F094F9123B4FC24001780D7 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				6F094F8D23B4FA33001780D7 /* WebViewViewController.swift */,
+				6F094F8E23B4FA33001780D7 /* WebViewViewController.xib */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		6FC30C0023B115690021E3BD = {
 			isa = PBXGroup;
 			children = (
@@ -72,14 +81,13 @@
 		6FC30C0B23B115690021E3BD /* TestINNOVATIONS */ = {
 			isa = PBXGroup;
 			children = (
+				6F094F9123B4FC24001780D7 /* WebView */,
 				6FC55BFC23B2613C00CE3281 /* Extensions */,
 				6FC55BF523B2533800CE3281 /* Service */,
 				6FC30C2223B1159B0021E3BD /* Search */,
 				6FC30C2123B1158D0021E3BD /* Favourite */,
 				6FC30C2023B115810021E3BD /* Support */,
 				6FC30C1223B115690021E3BD /* Main.storyboard */,
-				6F094F8D23B4FA33001780D7 /* WebViewViewController.swift */,
-				6F094F8E23B4FA33001780D7 /* WebViewViewController.xib */,
 			);
 			path = TestINNOVATIONS;
 			sourceTree = "<group>";
