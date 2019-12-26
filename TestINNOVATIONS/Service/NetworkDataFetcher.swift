@@ -8,12 +8,17 @@
 
 import Foundation
 
+enum Response {
+    case success (result: ResponseModel)
+    case failure (error: Error?)
+}
+
 
 class NetworkDataFetcher {
     
     let networkService = NetworkService()
     
-      func fetchDeclarations(searchTerm: String, completion: @escaping (ResponseModel?) -> ()) {
+      func fetchDeclarations(searchTerm: String, completion: @escaping (Response?) -> ()) {
         
         networkService.request(searchTerm: searchTerm) { (data, error) in
             if let error = error {
@@ -26,16 +31,16 @@ class NetworkDataFetcher {
     }
     
     
-      func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
+      func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> Response {
           let decoder = JSONDecoder()
-          guard let data = from else { return nil }
+        guard let data = from else { return Response.failure(error: nil) }
           
           do {
               let objects = try decoder.decode(type.self, from: data)
-              return objects
+            return  Response.success(result: objects as! ResponseModel)
           } catch let jsonError {
               print("Failed to decode JSON", jsonError)
-              return nil
+               return Response.failure(error: nil)
           }
       }
     

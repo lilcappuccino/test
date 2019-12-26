@@ -13,7 +13,7 @@ import Foundation
 extension String{
     var encodeUrl : String
     {
-        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+        return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     }
     var decodeUrl : String
     {

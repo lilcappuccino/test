@@ -26,6 +26,9 @@
                                     <constraint firstAttribute="height" constant="24" id="sgM-tL-sNg"/>
                                 </constraints>
                                 <state key="normal" image="book.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="openPdfTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QC3-uJ-x01"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOa-0R-QDl">
                                 <rect key="frame" x="32" y="32.5" width="24" height="24"/>
@@ -34,26 +37,29 @@
                                     <constraint firstAttribute="width" constant="24" id="esc-Jz-CwN"/>
                                 </constraints>
                                 <state key="normal" image="star" catalog="system"/>
+                                <connections>
+                                    <action selector="addToFavouriteTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rf8-Rl-j9T"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="woj-y6-U8o">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="woj-y6-U8o">
                         <rect key="frame" x="8" y="8" width="240" height="73"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Name Surname" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-vz-OdX">
-                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="23"/>
+                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="company name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeF-HT-QGY">
-                                <rect key="frame" x="0.0" y="25" width="104.5" height="23"/>
+                                <rect key="frame" x="0.0" y="28.5" width="104.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="position" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-0y-7Bx">
-                                <rect key="frame" x="0.0" y="50" width="54.5" height="23"/>
+                                <rect key="frame" x="0.0" y="55" width="54.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
