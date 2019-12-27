@@ -12,31 +12,13 @@ class NetworkService {
     
     
     func request(searchTerm: String, completion: @escaping (Data?, Error?) -> Void){
-//        let params = preapreParams(searchTerm: searchTerm)
         guard let url = URL(string: "https://public-api.nazk.gov.ua/v1/declaration/?q=\(searchTerm.encodeUrl)") else { return }
-        print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "get"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let task = createDataTask(from: request, completion: completion)
         task.resume()
 
-    }
-    
-
-    private func preapreParams(searchTerm: String) -> [String: String] {
-        var params =  [String: String]()
-        params["q"] = searchTerm.encodeUrl
-        return params
-    }
-
-    private func url(params: [String: String]) -> URL? {
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "public-api.nazk.gov.ua"
-        components.path = "/v1/declaration"
-        components.queryItems = params.map{ URLQueryItem(name: $0, value: $1) }
-        return components.url
     }
     
     
