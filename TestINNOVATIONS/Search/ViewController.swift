@@ -73,13 +73,11 @@ class ViewController: UIViewController {
         let alertAcrion = UIAlertAction(title: "Зрозуміло", style: .cancel, handler: nil)
         errorDialog.addAction(alertAcrion)
         present(errorDialog, animated: true, completion: nil)
-        
-        
     }
     
     private func startLoading(){
         tableView.separatorStyle = .none
-                 loadingIndicator.startAnimating()
+        loadingIndicator.startAnimating()
     }
     
     private  func stopLoading(){
@@ -87,11 +85,12 @@ class ViewController: UIViewController {
         self.tableView.separatorStyle = .singleLine
     }
     
+    
+    //MARK:-> Actions
     private func openViewForPDFReading(by urlString: String){
         let vc = WebViewViewController()
-               vc.link = urlString
+        vc.link = urlString
         present(vc, animated: true, completion: nil)
-//               navigationController?.present(vc, animated: true, completion: nil)
     }
     
 }
@@ -99,10 +98,11 @@ class ViewController: UIViewController {
 //MARK:-> UISearchBarDelegate
 extension ViewController: UISearchBarDelegate {
     
+    ///Can use Rx for better result
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         timer?.invalidate()
         
-        timer = Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false, block: {_ in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.9, repeats: false, block: {_ in
             print(searchText)
             self.startLoading()
             self.data.removeAll()
@@ -141,10 +141,10 @@ extension ViewController : DeclarationCellDelegate {
     func openPdfTapped(url: String) {
         openViewForPDFReading(by: url)
     }
-
+    
     
     func addToFavTapped() {
-         
+        
     }
     
     
