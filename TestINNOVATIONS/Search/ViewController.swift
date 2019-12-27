@@ -68,8 +68,8 @@ class ViewController: UIViewController {
     
     private func showErrorDialog(error: Error? ){
         stopLoading()
-        let message = error?.localizedDescription ?? "щось пішло не так. Більша за все помилка в додатку"
-        let errorDialog = UIAlertController(title: "Помилка! Повторіть спробу", message: message, preferredStyle: .alert)
+        let title = error?.localizedDescription ?? "щось пішло не так"
+        let errorDialog = UIAlertController(title: title, message: "", preferredStyle: .alert)
         let alertAcrion = UIAlertAction(title: "Зрозуміло", style: .cancel, handler: nil)
         errorDialog.addAction(alertAcrion)
         present(errorDialog, animated: true, completion: nil)

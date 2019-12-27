@@ -40,8 +40,24 @@ class NetworkDataFetcher {
             return  Response.success(result: objects as! ResponseModel)
           } catch let jsonError {
               print("Failed to decode JSON", jsonError)
-               return Response.failure(error: nil)
+            return  parseJSONError(from: data)
           }
       }
+    
+    //MARK:-> Error Parsing
+ //   A bad solution, but errors from the server do not come to the object as a type of error. For correct parsing error use the following solution :(
+    func parseJSONError(from: Data?) -> Response  {
+        let decoder = JSONDecoder()
+        guard let data = from else { return Response.failure(error: nil) }
+                 do {
+                     let objects = try decoder.decode(ResponseError.self, from: data)
+                    return  Response.failure(error: NSError(domain: "", code: objects.error, userInfo:
+                        [  NSLocalizedDescriptionKey : objects.message]))
+                 } catch let jsonError {
+                     print("Failed to decode JSON ERROR", jsonError)
+                 }
+        return Response.failure(error: nil)
+    }
+
     
 }

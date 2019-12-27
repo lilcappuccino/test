@@ -23,3 +23,9 @@ struct ItemResponseModel: Codable {
     let id, firstname, lastname, placeOfWork: String
     let linkPDF, position: String?
 }
+
+
+struct ResponseError: Codable {
+    let error:Int
+    let message: String
+}
