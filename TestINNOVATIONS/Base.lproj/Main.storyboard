@@ -7,17 +7,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Favourite View Controller-->
         <scene sceneID="uyD-ga-y26">
             <objects>
-                <viewController id="gkd-GJ-2Wy" sceneMemberID="viewController">
+                <viewController id="gkd-GJ-2Wy" customClass="FavouriteViewController" customModule="TestINNOVATIONS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XD0-A3-HMf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dqm-g3-wno">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WO3-B6-JvI" firstAttribute="trailing" secondItem="dqm-g3-wno" secondAttribute="trailing" id="5NJ-rf-75M"/>
+                            <constraint firstItem="WO3-B6-JvI" firstAttribute="bottom" secondItem="dqm-g3-wno" secondAttribute="bottom" id="Kvv-Sg-zKg"/>
+                            <constraint firstItem="dqm-g3-wno" firstAttribute="leading" secondItem="WO3-B6-JvI" secondAttribute="leading" id="ei4-h5-AQL"/>
+                            <constraint firstItem="dqm-g3-wno" firstAttribute="top" secondItem="WO3-B6-JvI" secondAttribute="top" id="qBf-zj-PCc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WO3-B6-JvI"/>
                     </view>
                     <navigationItem key="navigationItem" id="sQ5-9L-pw9"/>
+                    <connections>
+                        <outlet property="tableView" destination="dqm-g3-wno" id="IB6-tg-nHj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E68-Cz-bOL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
