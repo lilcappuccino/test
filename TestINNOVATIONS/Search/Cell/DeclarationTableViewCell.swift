@@ -31,7 +31,6 @@ class DeclarationTableViewCell: UITableViewCell {
             setupCell(name: name, companyName: item.placeOfWork, position: item.position ?? hasNotPositionText, link: item.linkPDF)
         }
     }
-    var link: String?
     var isFavourite = false {
         didSet {
             isAddedToFavoutire()
@@ -53,7 +52,6 @@ class DeclarationTableViewCell: UITableViewCell {
     
     
     func setupCell(name: String, companyName: String, position: String, link: String?){
-         self.link = link
         openPdfButton.isHidden = link == nil ? true : false
         nameLabel.text = name
         companyNameLabel.text = companyName
@@ -76,7 +74,7 @@ class DeclarationTableViewCell: UITableViewCell {
     
     
     @IBAction func openPdfTapped(_ sender: Any) {
-        guard let pdfUrl = link else { return }
+        guard let pdfUrl = cellItem?.linkPDF else { return }
         delegate?.openPdfTapped(url: pdfUrl)
     }
     

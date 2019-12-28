@@ -12,14 +12,15 @@ import CoreData
 class Declaration: NSManagedObject {
     
     //MARK:-> Create
-    static func add(id:String,firstName: String, lastName: String, placeOfWork: String, position: String = hasNotPositionText, linkPDF: String = "",  in context: NSManagedObjectContext){
+    static func add(comment:String, id:String,firstName: String, lastName: String, placeOfWork: String, position: String = hasNotPositionText, linkPDF: String = "",  in context: NSManagedObjectContext){
         let declaration =  Declaration(context: context)
         declaration.id = id
         declaration.firstName = firstName
         declaration.lastName = lastName
         declaration.placeOfWork = placeOfWork
         declaration.position = position
-        declaration.linkPDF = linkPDF  
+        declaration.linkPDF = linkPDF
+        declaration.comment = comment
         do{
             _ = try context.save()
         }catch{

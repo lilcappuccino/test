@@ -20,6 +20,7 @@ class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
+
     
     // MARK:-> IBOutlet
     @IBOutlet weak var tableView: UITableView!
@@ -90,7 +91,7 @@ class ViewController: UIViewController {
     //MARK: -> DB operations
     
     private func saveDeclarationToDB(item: ItemResponseModel, text: String){
-        Declaration.add(id: item.id, firstName: item.firstname, lastName: item.lastname, placeOfWork: item.placeOfWork, position: item.position ?? hasNotPositionText, linkPDF: item.linkPDF ?? "", in: context)
+        Declaration.add(comment: text, id: item.id, firstName: item.firstname, lastName: item.lastname, placeOfWork: item.placeOfWork, position: item.position ?? hasNotPositionText, linkPDF: item.linkPDF ?? "", in: context)
     }
     
     
