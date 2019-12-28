@@ -10,13 +10,12 @@ import UIKit
 
 protocol DeclarationCellDelegate {
     func openPdfTapped(url: String)
-    func addToFavTapped()
+    func addToFavTapped(item: ItemResponseModel)
 }
 
 
 class DeclarationTableViewCell: UITableViewCell {
-    
-    let hasNotPositionText = "ні"
+
     //MARK:-> Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var companyNameLabel: UILabel!
@@ -25,8 +24,19 @@ class DeclarationTableViewCell: UITableViewCell {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var openPdfButton: UIButton!
     
+    var cellItem: ItemResponseModel? {
+        didSet {
+            guard let item = cellItem else { return }
+            let name = "\(item.firstname) \(item.lastname)"
+            setupCell(name: name, companyName: item.placeOfWork, position: item.position ?? hasNotPositionText, link: item.linkPDF)
+        }
+    }
     var link: String?
-    var isFavourite = false
+    var isFavourite = false {
+        didSet {
+            isAddedToFavoutire()
+        }
+    }
     var delegate: DeclarationCellDelegate?
     
     
@@ -42,7 +52,7 @@ class DeclarationTableViewCell: UITableViewCell {
     }
     
     
-    func setupCell(name: String, companyName: String, position: String, link: String?, isFavourite: Bool = false){
+    func setupCell(name: String, companyName: String, position: String, link: String?){
          self.link = link
         openPdfButton.isHidden = link == nil ? true : false
         nameLabel.text = name
@@ -54,7 +64,6 @@ class DeclarationTableViewCell: UITableViewCell {
             positionLabel.text = position
             
         }
-        isAddedToFavoutire()
     }
     
     private func isAddedToFavoutire(){
@@ -72,6 +81,8 @@ class DeclarationTableViewCell: UITableViewCell {
     }
     
     @IBAction func addToFavouriteTapped(_ sender: Any) {
+        guard let item = cellItem else { return }
+        delegate?.addToFavTapped(item: item)
         isFavourite = !isFavourite
         isAddedToFavoutire()
     }

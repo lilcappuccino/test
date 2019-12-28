@@ -11,6 +11,8 @@ import WebKit
 
 class ViewController: UIViewController {
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     private var timer : Timer?
     private var fetchData = NetworkDataFetcher()
     private var data = [ItemResponseModel]() {
@@ -85,6 +87,12 @@ class ViewController: UIViewController {
         self.tableView.separatorStyle = .singleLine
     }
     
+    //MARK: -> DB operations
+    
+    private func saveDeclarationToDB(item: ItemResponseModel, text: String){
+        Declaration.add(id: item.id, firstName: item.firstname, lastName: item.lastname, placeOfWork: item.placeOfWork, position: item.position ?? hasNotPositionText, linkPDF: item.linkPDF ?? "", in: context)
+    }
+    
     
     //MARK:-> Actions
     private func openViewForPDFReading(by urlString: String){
@@ -92,6 +100,25 @@ class ViewController: UIViewController {
         vc.link = urlString
         present(vc, animated: true, completion: nil)
     }
+    
+    private func showAddToFavDialog(saving item: ItemResponseModel){
+        let comentDialog = UIAlertController(title: "Додати коментар", message: nil, preferredStyle: .alert)
+        comentDialog.addTextField(configurationHandler: nil)
+      
+        comentDialog.addAction(UIAlertAction(title: "Скасувати", style: .cancel, handler: nil))
+        comentDialog.addAction(UIAlertAction(title: "Додати", style: .default, handler: { [weak self] _ in
+            self?.saveDeclarationToDB(item: item, text: comentDialog.textFields?.first?.text! ?? "")
+            
+        }))
+        self.present(comentDialog, animated: true, completion: nil)
+    }
+    
+//    func textFieldHandler(textField: UITextField!)
+//    {
+//        if (textField) != nil {
+//            textField.text = ""
+//        }
+//    }
     
 }
 
@@ -129,8 +156,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: DeclarationTableViewCell.description(), for: indexPath) as! DeclarationTableViewCell
         cell.delegate = self
         let currentItem = data[indexPath.row]
-        let name = "\(currentItem.firstname) \(currentItem.lastname)"
-        cell.setupCell(name: name, companyName: currentItem.placeOfWork, position: currentItem.position ?? cell.hasNotPositionText, link: currentItem.linkPDF)
+        cell.isFavourite = Declaration.isExsiting(by: currentItem.id, in: context)
+        cell.cellItem = currentItem
         return cell
     }
     
@@ -138,14 +165,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 
 //MARK: -> DeclarationCellDelegate
 extension ViewController : DeclarationCellDelegate {
+    func addToFavTapped(item: ItemResponseModel) {
+        showAddToFavDialog(saving: item)
+    }
+    
     func openPdfTapped(url: String) {
         openViewForPDFReading(by: url)
     }
     
     
-    func addToFavTapped() {
-        
-    }
     
     
 }

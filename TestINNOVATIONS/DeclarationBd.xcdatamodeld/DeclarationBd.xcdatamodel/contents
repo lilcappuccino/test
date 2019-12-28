@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Declaration" representedClassName=".Declaration" syncable="YES" codeGenerationType="category">
+        <attribute name="firstName" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="lastName" attributeType="String"/>
+        <attribute name="linkPDF" attributeType="String"/>
+        <attribute name="placeOfWork" attributeType="String"/>
+        <attribute name="position" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Declaration" positionX="-63" positionY="-18" width="128" height="133"/>
+    </elements>
+</model>
