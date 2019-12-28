@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F02F30623B657D8004A18E5 /* Declaration.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F02F30423B657D8004A18E5 /* Declaration.xcdatamodeld */; };
+		6F02F30B23B65BB5004A18E5 /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F02F30A23B65BB5004A18E5 /* LocalDataService.swift */; };
 		6F094F8F23B4FA33001780D7 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F094F8D23B4FA33001780D7 /* WebViewViewController.swift */; };
 		6F094F9023B4FA33001780D7 /* WebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F094F8E23B4FA33001780D7 /* WebViewViewController.xib */; };
 		6FC30C0D23B115690021E3BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC30C0C23B115690021E3BD /* AppDelegate.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F02F30523B657D8004A18E5 /* Declaration.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Declaration.xcdatamodel; sourceTree = "<group>"; };
+		6F02F30A23B65BB5004A18E5 /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
 		6F094F8D23B4FA33001780D7 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		6F094F8E23B4FA33001780D7 /* WebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewViewController.xib; sourceTree = "<group>"; };
 		6FC30C0923B115690021E3BD /* TestINNOVATIONS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestINNOVATIONS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F02F30723B65B02004A18E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6FC55BFA23B254DE00CE3281 /* ResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6F094F9123B4FC24001780D7 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +100,7 @@
 				6FC30C2123B1158D0021E3BD /* Favourite */,
 				6FC30C2023B115810021E3BD /* Support */,
 				6FC30C1223B115690021E3BD /* Main.storyboard */,
+				6F02F30423B657D8004A18E5 /* Declaration.xcdatamodeld */,
 			);
 			path = TestINNOVATIONS;
 			sourceTree = "<group>";
@@ -132,9 +145,10 @@
 		6FC55BF523B2533800CE3281 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				6F02F30723B65B02004A18E5 /* Model */,
 				6FC55BF623B2534F00CE3281 /* NetworkService.swift */,
 				6FC55BF823B2549F00CE3281 /* NetworkDataFetcher.swift */,
-				6FC55BFA23B254DE00CE3281 /* ResponseModel.swift */,
+				6F02F30A23B65BB5004A18E5 /* LocalDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -224,7 +238,9 @@
 				6FC55BF723B2534F00CE3281 /* NetworkService.swift in Sources */,
 				6FC55BF923B2549F00CE3281 /* NetworkDataFetcher.swift in Sources */,
 				6FC30C1123B115690021E3BD /* ViewController.swift in Sources */,
+				6F02F30623B657D8004A18E5 /* Declaration.xcdatamodeld in Sources */,
 				6FC30C0D23B115690021E3BD /* AppDelegate.swift in Sources */,
+				6F02F30B23B65BB5004A18E5 /* LocalDataService.swift in Sources */,
 				6FC55BFB23B254DE00CE3281 /* ResponseModel.swift in Sources */,
 				6FC30C2723B120000021E3BD /* DeclarationTableViewCell.swift in Sources */,
 				6FC55BFF23B2615A00CE3281 /* String.swift in Sources */,
@@ -426,6 +442,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6F02F30423B657D8004A18E5 /* Declaration.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6F02F30523B657D8004A18E5 /* Declaration.xcdatamodel */,
+			);
+			currentVersion = 6F02F30523B657D8004A18E5 /* Declaration.xcdatamodel */;
+			path = Declaration.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6FC30C0123B115690021E3BD /* Project object */;
 }
