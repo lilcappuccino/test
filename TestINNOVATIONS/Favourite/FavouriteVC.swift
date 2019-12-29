@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class FavouriteViewController: UIViewController {
+class FavouriteVC: UIViewController {
     
     //MARK:-> Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -90,7 +90,7 @@ class FavouriteViewController: UIViewController {
 
 
 //MARK: -> UITableViewDelegate, UITableViewDataSource
-extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource{
+extension FavouriteVC: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController?.sections?.count ?? 0
     }
@@ -112,7 +112,7 @@ extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource{
 }
 
 //MARK:-> FavouriteCellDelegate
-extension FavouriteViewController: FavouriteCellDelegate{
+extension FavouriteVC: FavouriteCellDelegate{
     func editCommentDidTapped(id: String, old comemnt: String) {
         showChangeCommentDialog(declarationId: id, old: comemnt)
     }
@@ -130,7 +130,7 @@ extension FavouriteViewController: FavouriteCellDelegate{
 
 
 //MARK: -> NSFetchedResultsControllerDelegate
-extension FavouriteViewController : NSFetchedResultsControllerDelegate {
+extension FavouriteVC : NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         guard let index = indexPath, type == NSFetchedResultsChangeType.delete else { return }
             tableView.deleteRows(at: [index], with: .fade)

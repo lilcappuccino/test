@@ -9,9 +9,17 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class MainVC: UIViewController {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    // MARK:-> IBOutlet
+    @IBOutlet weak var tableView: UITableView!
+    var loadingIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        return indicator
+    }()
+    
+    let webview = WKWebView(frame: UIScreen.main.bounds)
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private var timer : Timer?
     private var fetchData = NetworkDataFetcher()
@@ -20,16 +28,6 @@ class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
-
-    
-    // MARK:-> IBOutlet
-    @IBOutlet weak var tableView: UITableView!
-    var loadingIndicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView()
-        return indicator
-    }()
-    let webview = WKWebView(frame: UIScreen.main.bounds)
-    
     
     // MARK:-> Lifecycle
     override func viewDidLoad() {
@@ -41,10 +39,7 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-       //using this method for detecting is declaration
-        //added to favourite when we delete it
-        //from another controller without reloading date
-        tableView.reloadData()
+        recheckIsDeclarationFav()
     }
     
     // MARK:-> Setup UI
@@ -70,6 +65,16 @@ class ViewController: UIViewController {
         tableView.backgroundView  = loadingIndicator
     }
     
+    // using this method for detecting is declaration
+    // added to favourite when we
+    // 1 - delete it from another controller without reloading date
+    // 2 - when dismiss button tapped when a comment is adding
+    //
+    private func recheckIsDeclarationFav(){
+        tableView.reloadData()
+    }
+    
+    //MARK:-> States
     private func loadingSucces(apiData: [ItemResponseModel]){
         self.data.append(contentsOf: apiData)
         stopLoading()
@@ -96,7 +101,6 @@ class ViewController: UIViewController {
     }
     
     //MARK: -> DB operations
-    
     private func saveDeclarationToDB(item: ItemResponseModel, text: String){
         Declaration.add(comment: text, id: item.id, firstName: item.firstname, lastName: item.lastname, placeOfWork: item.placeOfWork, position: item.position ?? hasNotPositionText, linkPDF: item.linkPDF ?? "", in: context)
     }
@@ -112,8 +116,8 @@ class ViewController: UIViewController {
     private func showAddToFavDialog(saving item: ItemResponseModel){
         let comentDialog = UIAlertController(title: "Додати коментар", message: nil, preferredStyle: .alert)
         comentDialog.addTextField(configurationHandler: nil)
-      
-        comentDialog.addAction(UIAlertAction(title: "Скасувати", style: .cancel, handler: nil))
+        
+        comentDialog.addAction(UIAlertAction(title: "Скасувати", style: .cancel, handler: { [weak self] _ in self?.recheckIsDeclarationFav() }))
         comentDialog.addAction(UIAlertAction(title: "Додати", style: .default, handler: { [weak self] _ in
             self?.saveDeclarationToDB(item: item, text: comentDialog.textFields?.first?.text! ?? "")
             
@@ -124,7 +128,7 @@ class ViewController: UIViewController {
 }
 
 //MARK:-> UISearchBarDelegate
-extension ViewController: UISearchBarDelegate {
+extension MainVC: UISearchBarDelegate {
     
     ///Can use Rx for better result
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -148,7 +152,7 @@ extension ViewController: UISearchBarDelegate {
 }
 
 //MARK: -> UITableViewDelegate, UITableViewDataSource
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension MainVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         data.count
     }
@@ -165,16 +169,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 }
 
 //MARK: -> DeclarationCellDelegate
-extension ViewController : DeclarationCellDelegate {
-    func addToFavTapped(item: ItemResponseModel) {
+extension MainVC : DeclarationCellDelegate {
+    func addToFavDidTapped(item: ItemResponseModel) {
         showAddToFavDialog(saving: item)
     }
     
-    func openPdfTapped(url: String) {
+    func openPdfDidTapped(url: String) {
         openViewForPDFReading(by: url)
     }
-    
-    
-    
     
 }

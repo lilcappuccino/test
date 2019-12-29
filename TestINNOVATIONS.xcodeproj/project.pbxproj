@@ -11,7 +11,7 @@
 		6F094F9023B4FA33001780D7 /* WebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F094F8E23B4FA33001780D7 /* WebViewViewController.xib */; };
 		6FC30C0D23B115690021E3BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC30C0C23B115690021E3BD /* AppDelegate.swift */; };
 		6FC30C0F23B115690021E3BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC30C0E23B115690021E3BD /* SceneDelegate.swift */; };
-		6FC30C1123B115690021E3BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC30C1023B115690021E3BD /* ViewController.swift */; };
+		6FC30C1123B115690021E3BD /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC30C1023B115690021E3BD /* MainVC.swift */; };
 		6FC30C1423B115690021E3BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FC30C1223B115690021E3BD /* Main.storyboard */; };
 		6FC30C1623B1156B0021E3BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FC30C1523B1156B0021E3BD /* Assets.xcassets */; };
 		6FC30C1923B1156B0021E3BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FC30C1723B1156B0021E3BD /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		6FCF285723B7760A00A73DDE /* Declaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF285623B7760A00A73DDE /* Declaration.swift */; };
 		6FCF285923B778FF00A73DDE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF285823B778FF00A73DDE /* Constants.swift */; };
 		6FCF285F23B7A49000A73DDE /* DeclarationBd.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF285D23B7A49000A73DDE /* DeclarationBd.xcdatamodeld */; };
-		6FCF286223B7AD9200A73DDE /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF286123B7AD9200A73DDE /* FavouriteViewController.swift */; };
+		6FCF286223B7AD9200A73DDE /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF286123B7AD9200A73DDE /* FavouriteVC.swift */; };
 		6FD893DF23B7AF4C000D1215 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD893DD23B7AF4C000D1215 /* FavouriteTableViewCell.swift */; };
 		6FD893E223B7AFE4000D1215 /* FavouriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FD893E123B7AFE4000D1215 /* FavouriteTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		6FC30C0923B115690021E3BD /* TestINNOVATIONS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestINNOVATIONS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FC30C0C23B115690021E3BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FC30C0E23B115690021E3BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6FC30C1023B115690021E3BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6FC30C1023B115690021E3BD /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		6FC30C1323B115690021E3BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6FC30C1523B1156B0021E3BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FC30C1823B1156B0021E3BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		6FCF285623B7760A00A73DDE /* Declaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Declaration.swift; sourceTree = "<group>"; };
 		6FCF285823B778FF00A73DDE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6FCF285E23B7A49000A73DDE /* DeclarationBd.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DeclarationBd.xcdatamodel; sourceTree = "<group>"; };
-		6FCF286123B7AD9200A73DDE /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		6FCF286123B7AD9200A73DDE /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		6FD893DD23B7AF4C000D1215 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
 		6FD893E123B7AFE4000D1215 /* FavouriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavouriteTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				6FD893DC23B7AF31000D1215 /* Cell */,
-				6FCF286123B7AD9200A73DDE /* FavouriteViewController.swift */,
+				6FCF286123B7AD9200A73DDE /* FavouriteVC.swift */,
 			);
 			path = Favourite;
 			sourceTree = "<group>";
@@ -140,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				6FC30C2923B120050021E3BD /* Cell */,
-				6FC30C1023B115690021E3BD /* ViewController.swift */,
+				6FC30C1023B115690021E3BD /* MainVC.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -259,11 +259,11 @@
 				6FC55BF723B2534F00CE3281 /* NetworkService.swift in Sources */,
 				6FCF285723B7760A00A73DDE /* Declaration.swift in Sources */,
 				6FC55BF923B2549F00CE3281 /* NetworkDataFetcher.swift in Sources */,
-				6FC30C1123B115690021E3BD /* ViewController.swift in Sources */,
+				6FC30C1123B115690021E3BD /* MainVC.swift in Sources */,
 				6FC30C0D23B115690021E3BD /* AppDelegate.swift in Sources */,
 				6FCF285923B778FF00A73DDE /* Constants.swift in Sources */,
 				6FC55BFB23B254DE00CE3281 /* ResponseModel.swift in Sources */,
-				6FCF286223B7AD9200A73DDE /* FavouriteViewController.swift in Sources */,
+				6FCF286223B7AD9200A73DDE /* FavouriteVC.swift in Sources */,
 				6FC30C2723B120000021E3BD /* DeclarationTableViewCell.swift in Sources */,
 				6FC55BFF23B2615A00CE3281 /* String.swift in Sources */,
 				6FD893DF23B7AF4C000D1215 /* FavouriteTableViewCell.swift in Sources */,

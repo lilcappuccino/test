@@ -9,8 +9,8 @@
 import UIKit
 
 protocol DeclarationCellDelegate {
-    func openPdfTapped(url: String)
-    func addToFavTapped(item: ItemResponseModel)
+    func openPdfDidTapped(url: String)
+    func addToFavDidTapped(item: ItemResponseModel)
 }
 
 
@@ -51,6 +51,7 @@ class DeclarationTableViewCell: UITableViewCell {
     }
     
     
+    //MARK:-> Setup UI
     func setupCell(name: String, companyName: String, position: String, link: String?){
         openPdfButton.isHidden = link == nil ? true : false
         nameLabel.text = name
@@ -73,14 +74,15 @@ class DeclarationTableViewCell: UITableViewCell {
     }
     
     
+    //MARK:-> Actions
     @IBAction func openPdfTapped(_ sender: Any) {
         guard let pdfUrl = cellItem?.linkPDF  else { return }
-        delegate?.openPdfTapped(url: pdfUrl)
+        delegate?.openPdfDidTapped(url: pdfUrl)
     }
     
     @IBAction func addToFavouriteTapped(_ sender: Any) {
         guard let item = cellItem else { return }
-        delegate?.addToFavTapped(item: item)
+        delegate?.addToFavDidTapped(item: item)
         isFavourite = !isFavourite
         isAddedToFavoutire()
     }
