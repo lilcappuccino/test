@@ -39,6 +39,13 @@ class ViewController: UIViewController {
         registerCell()
         setupTableView()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+       //using this method for detecting is declaration
+        //added to favourite when we delete it
+        //from another controller without reloading date
+        tableView.reloadData()
+    }
     
     // MARK:-> Setup UI
     private func setupNavigationBar(){
@@ -113,13 +120,6 @@ class ViewController: UIViewController {
         }))
         self.present(comentDialog, animated: true, completion: nil)
     }
-    
-//    func textFieldHandler(textField: UITextField!)
-//    {
-//        if (textField) != nil {
-//            textField.text = ""
-//        }
-//    }
     
 }
 

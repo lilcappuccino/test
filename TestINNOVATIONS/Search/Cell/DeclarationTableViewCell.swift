@@ -74,7 +74,7 @@ class DeclarationTableViewCell: UITableViewCell {
     
     
     @IBAction func openPdfTapped(_ sender: Any) {
-        guard let pdfUrl = cellItem?.linkPDF else { return }
+        guard let pdfUrl = cellItem?.linkPDF  else { return }
         delegate?.openPdfTapped(url: pdfUrl)
     }
     

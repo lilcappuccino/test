@@ -29,12 +29,25 @@ class Declaration: NSManagedObject {
     }
     
     //MARK:-> Remove
-    static func removeDeclaration(in contex: NSManagedObjectContext){
-        
+    static func remove(by id: String, in context: NSManagedObjectContext){
+        guard let deletingDeclaration = get(by: id, context: context) else { return }
+        context.delete(deletingDeclaration)
+        do{
+            _ = try context.save()
+        }catch{
+            print("Declaration.delete ->  \(error)")
+        }
     }
     
     //MARK:-> Update
-    static func updateDeclaration(in context: NSManagedObjectContext){
+    static func update(id:String, new comemnt: String, in context: NSManagedObjectContext){
+        guard let updatingDeclaration = get(by: id, context: context) else { return }
+        updatingDeclaration.comment = comemnt
+        do{
+            _ = try context.save()
+        }catch{
+            print("Declaration.delete ->  \(error)")
+        }
         
     }
     
@@ -46,10 +59,22 @@ class Declaration: NSManagedObject {
             let declarationList = try context.fetch(request)
             return declarationList.count > 0
         }catch {
-            print("Declaration getFromDataStore ->  \(error)")
+            print("Declaration isExsisting ->  \(error)")
         }
         return false
         
+    }
+    
+    static func get(by id: String, context: NSManagedObjectContext) -> Declaration? {
+        let request = NSFetchRequest<Declaration>(entityName: "Declaration")
+        request.predicate = NSPredicate(format: "id == %@", id)
+        do{
+            let declaration = try context.fetch(request).first
+            return declaration
+        }catch {
+            print("Declaration getFromDataStore ->  \(error)")
+        }
+        return nil
     }
     
 }
